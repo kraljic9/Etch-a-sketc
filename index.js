@@ -52,25 +52,7 @@ function getRandomColor() {
 }
 
 
-function darker(block) {
-    let currentColor = block.style.backgroundColor;
-    let rgbaValues = currentColor.match(/\d+/g);
-    let currentOpacity = parseFloat(rgbaValues[3]);
-    let newOpacity = currentOpacity + 0.1;
-    if (newOpacity > 1) {
-        newOpacity = 1;
-    }
-    block.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
-}
 
-btnDark.addEventListener('click', () => {
-    let blocks = document.querySelectorAll('.block');
-    blocks.forEach(block => {
-        block.addEventListener('mouseover', () => {
-            darker();
-        });
-    });
-});
 
 
     
